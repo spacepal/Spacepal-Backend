@@ -1,14 +1,24 @@
-# Spacepal
-Online version of Konquest game [in development]
+# README
 
-# Spacepal is a step-by-step game.
-* The main goal is to capture all the planets of the opponent and remain the last on the map
-* Each step player sends ships from one planet to another
-* Every planet has its own kill percentage and production number
-* Ships can:
-  * capture the planet (in that way player get the planet) 
-  * land on the planet (if player is already the owner)
-  * be destroyd by planet (if planet is stronger)
-* Each step there is a fear for every planet and fleet to be damaged by pirates
-* You can play with ouyr friends or any other people
-* No need to sign up, only type in the name
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
