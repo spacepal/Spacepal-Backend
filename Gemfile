@@ -13,7 +13,7 @@ gem 'rainbow'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 4.0'
-gem 'ohm'
+gem 'ohm', '~> 3.1.1'
 gem 'faker'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -3,10 +3,11 @@ require "net/http"
 
 module RequestModule
 
-HOST_NAME = ENV["SPACEPAL_AISERVICE_LOCAL"] or 'localhost:3131'
+AI_URL = ENV["SPACEPAL_AISERVICE_URL"] or 'http://localhost:3131'
+CALLBACK_URL = ENV.fetch("SPACEPAL_CALLBACK_URL") { "http://localhost:3000" }
 
   def get_bot_names
-    response_string = Net::HTTP.get(URI.parse('http://' + HOST_NAME + '/ai/names'), nil)
+    response_string = Net::HTTP.get(URI.parse(AI_URL + '/ai/names'), nil)
     response = JSON.parse response_string
     response["all"]
   end
@@ -23,13 +24,14 @@ HOST_NAME = ENV["SPACEPAL_AISERVICE_LOCAL"] or 'localhost:3131'
     end
     ai_players.compact!
     if ai_players.count > 0
+      
       data = {
-        "callback" => "http://localhost:3000/api/games/#{game.id}/steps/#{game.step}",
+        "callback" => "#{CALLBACK_URL}/api/games/#{game.id}/steps/#{game.step}",
         "aiPlayers" => ai_players,
         "map" => game.map_size,
         "planets" => game.planets_info
       }
-      response_string = Net::HTTP.post(URI.parse('http://' + HOST_NAME + '/ai/do'), data.to_json)
+      response_string = Net::HTTP.post(URI.parse(AI_URL + '/ai/do'), data.to_json)
       response_string.body.bg(:yellow).color(:black).out
     end
   end
