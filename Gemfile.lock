@@ -85,7 +85,7 @@ GEM
       nest (~> 3)
       redic (~> 1.5.0)
       stal
-    puma (3.11.4)
+    puma (3.12.3)
     rack (2.0.5)
     rack-cors (1.0.2)
     rack-test (1.0.0)
@@ -175,8 +175,8 @@ DEPENDENCIES
   byebug
   faker
   listen (>= 3.0.5, < 3.2)
-  ohm
-  puma (~> 3.11)
+  ohm (~> 3.1.1)
+  puma (~> 3.12)
   rack-cors
   rails (~> 5.2.0)
   rainbow
